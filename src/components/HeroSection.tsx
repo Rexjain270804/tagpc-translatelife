@@ -2,6 +2,7 @@ import { Download, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 import { useToast } from '@/hooks/use-toast';
+import logoImage from '@/assets/logo.png';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();
@@ -29,10 +30,14 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Conference Logo placeholder */}
+          {/* Conference Logo */}
           <div className="mb-8">
-            <div className="w-24 h-24 mx-auto bg-background/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <span className="text-3xl font-bold text-primary-foreground">TAG</span>
+            <div className="w-32 h-32 mx-auto">
+              <img 
+                src={logoImage} 
+                alt="TAG-PC 2025 Conference Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
           

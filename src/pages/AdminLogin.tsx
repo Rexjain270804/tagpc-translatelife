@@ -9,7 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import bcrypt from 'bcryptjs';
 
 const AdminLogin = () => {
-  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -19,41 +19,27 @@ const AdminLogin = () => {
     setIsLoading(true);
 
     try {
-      const { data: adminUser, error } = await supabase
-        .from('admin_users')
-        .select('*')
-        .eq('username', credentials.username)
-        .single();
+      // For demo purposes, simple hardcoded check
+      if (credentials.email === 'admin@tagpc2025.com' && credentials.password === 'admin123') {
+        // Store admin session in localStorage
+        localStorage.setItem('adminSession', JSON.stringify({
+          email: credentials.email,
+          loginTime: Date.now()
+        }));
 
-      if (error || !adminUser) {
+        toast({
+          title: "Login Successful",
+          description: "Welcome to the admin panel!",
+        });
+
+        navigate('/admin');
+      } else {
         throw new Error('Invalid credentials');
       }
-
-      // For demo purposes, we'll use a simple password check
-      // In production, you should use proper bcrypt comparison
-      const isValidPassword = credentials.password === 'admin123';
-      
-      if (!isValidPassword) {
-        throw new Error('Invalid credentials');
-      }
-
-      // Store admin session in localStorage
-      localStorage.setItem('adminSession', JSON.stringify({
-        id: adminUser.id,
-        username: adminUser.username,
-        loginTime: Date.now()
-      }));
-
-      toast({
-        title: "Login Successful",
-        description: "Welcome to the admin panel!",
-      });
-
-      navigate('/admin');
     } catch (error) {
       toast({
         title: "Login Failed",
-        description: "Invalid username or password",
+        description: "Invalid email or password",
         variant: "destructive",
       });
     } finally {
@@ -71,11 +57,12 @@ const AdminLogin = () => {
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <Label htmlFor="username">Username</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
-                id="username"
-                value={credentials.username}
-                onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+                id="email"
+                type="email"
+                value={credentials.email}
+                onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
                 required
               />
             </div>
@@ -98,7 +85,7 @@ const AdminLogin = () => {
           
           <div className="mt-4 p-3 bg-muted rounded text-sm text-muted-foreground">
             <p className="font-semibold">Demo Credentials:</p>
-            <p>Username: admin</p>
+            <p>Email: admin@tagpc2025.com</p>
             <p>Password: admin123</p>
           </div>
         </CardContent>

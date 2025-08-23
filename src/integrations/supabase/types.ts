@@ -35,6 +35,42 @@ export type Database = {
         }
         Relationships: []
       }
+      committee_members: {
+        Row: {
+          bio: string | null
+          created_at: string
+          email: string | null
+          id: string
+          image_url: string | null
+          name: string
+          order_index: number | null
+          role: string
+          updated_at: string
+        }
+        Insert: {
+          bio?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          image_url?: string | null
+          name: string
+          order_index?: number | null
+          role: string
+          updated_at?: string
+        }
+        Update: {
+          bio?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          image_url?: string | null
+          name?: string
+          order_index?: number | null
+          role?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       conference_content: {
         Row: {
           content: string | null
@@ -71,6 +107,30 @@ export type Database = {
           subtitle?: string | null
           title?: string | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
         }
         Relationships: []
       }
@@ -119,6 +179,36 @@ export type Database = {
           presentation_type?: string | null
           registration_fee?: number | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      website_content: {
+        Row: {
+          created_at: string
+          id: string
+          key: string
+          section: string
+          type: string | null
+          updated_at: string
+          value: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          key: string
+          section: string
+          type?: string | null
+          updated_at?: string
+          value?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key?: string
+          section?: string
+          type?: string | null
+          updated_at?: string
+          value?: string | null
         }
         Relationships: []
       }
