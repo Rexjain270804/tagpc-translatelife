@@ -6,7 +6,7 @@ const CommitteeSection = () => {
   const { data: committeeMembers } = useCommitteeMembers();
 
   return (
-    <section id="committee" className="py-20 bg-background">
+  <section id="committee" className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
@@ -19,11 +19,11 @@ const CommitteeSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {committeeMembers?.map((member) => (
-            <Card key={member.id} className="border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+            <Card key={member.id} className="border-accent/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
               <CardHeader className="text-center">
                 <div className="mb-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <User className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
+                    <User className="h-8 w-8 text-accent" />
                   </div>
                 </div>
                 <CardTitle className="text-xl text-primary">{member.name}</CardTitle>

@@ -25,27 +25,18 @@ const CFPSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="mb-8">
-            <CardContent className="p-6">
-              <div className="text-center mb-6">
-                <Button 
-                  size="lg" 
-                  className="transition-all duration-300 transform hover:scale-105"
-                  onClick={() => {
-                    if (cfpFile) {
-                      window.open(getCFPFileUrl(cfpFile.name), '_blank');
-                    } else {
-                      alert('CFP file is not available yet. Please check back later.');
-                    }
-                  }}
-                  disabled={!cfpFile}
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Full Call for Papers
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="flex justify-center mb-8">
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary px-8 py-4 text-base font-semibold"
+              onClick={() => {
+                window.open('/src/assets/CFP%20for%20International%20Conference%202025%20ASL.pdf', '_blank');
+              }}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Download Full Call for Papers
+            </Button>
+          </div>
 
           <div id="dates" className="grid md:grid-cols-2 gap-6">
             <Card className="border-primary/20 hover:border-primary/40 transition-colors">
@@ -65,6 +56,7 @@ const CFPSection = () => {
                 <p className="text-2xl font-bold text-foreground">
                   {getContent('dates', 'notification_date') || '30 Sept 2025'}
                 </p>
+                {/* Download button removed as per revert request */}
               </CardContent>
             </Card>
 
@@ -75,6 +67,7 @@ const CFPSection = () => {
                 <p className="text-2xl font-bold text-foreground">
                   {getContent('dates', 'full_paper_deadline') || '15 Oct 2025'}
                 </p>
+                {/* Download button removed as per revert request */}
               </CardContent>
             </Card>
 
@@ -85,6 +78,7 @@ const CFPSection = () => {
                 <p className="text-2xl font-bold text-foreground">
                   {getContent('dates', 'conference_dates') || '03–04 Nov 2025'}
                 </p>
+                {/* Download button removed as per revert request */}
               </CardContent>
             </Card>
           </div>

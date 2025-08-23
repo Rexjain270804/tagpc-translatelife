@@ -23,20 +23,20 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Gradient Background */}
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-background"
-        style={{ background: 'var(--hero-gradient)' }}
+  className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-background"
+  style={{ background: 'var(--hero-gradient)' }}
       />
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Conference Logo */}
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto">
+          <div className="mb-4 flex flex-col items-center justify-center">
+            <div className="w-44 h-44 flex items-center justify-center rounded-full bg-background/40 shadow-lg border-2 border-primary mb-2">
               <img 
                 src={logoImage} 
                 alt="TAG-PC 2025 Conference Logo" 
-                className="w-full h-full object-contain"
+                className="w-40 h-40 object-contain drop-shadow-lg"
               />
             </div>
           </div>
@@ -49,25 +49,43 @@ const HeroSection = () => {
             {getContent('hero', 'subtitle') || '03 – 04 November 2025 | Amity University Rajasthan, Jaipur, India'}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8 w-full">
             <Button 
               size="lg" 
-              className="bg-background text-primary hover:bg-background/90 transition-all duration-300 transform hover:scale-105"
+              className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary min-w-[220px]"
               onClick={() => window.open('/cfp.pdf', '_blank')}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Call for Papers
             </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-background text-background hover:bg-background hover:text-primary transition-all duration-300"
-              onClick={handleRegistrationClick}
-            >
-              <Users className="mr-2 h-5 w-5" />
-              Registration Opening Soon
-            </Button>
+            <form className="flex flex-col items-center sm:flex-row gap-2" onSubmit={e => {
+              e.preventDefault();
+              const email = (e.target as any).email.value;
+              if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                toast({ title: 'Invalid Email', description: 'Please enter a valid email address.' });
+                return;
+              }
+              toast({ title: 'Subscribed!', description: 'You will receive updates.' });
+              (e.target as any).reset();
+            }}>
+              <label htmlFor="email" className="text-background font-semibold text-lg mb-1 sm:mb-0 sm:mr-2">Get Updates</label>
+              <input 
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                className="px-4 py-2 rounded-lg border-2 border-primary bg-background text-primary focus:outline-none focus:ring-2 focus:ring-primary min-w-[180px]"
+                required
+                aria-label="Email address"
+              />
+              <Button 
+                size="lg" 
+                type="submit"
+                className="bg-accent text-accent-foreground border border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 min-w-[120px]"
+              >
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
       </div>
