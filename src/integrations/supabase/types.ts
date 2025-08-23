@@ -16,124 +16,109 @@ export type Database = {
     Tables: {
       admin_users: {
         Row: {
-          created_at: string
-          id: string
-          password_hash: string
-          updated_at: string
-          username: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          password_hash: string
-          updated_at?: string
-          username: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          password_hash?: string
-          updated_at?: string
-          username?: string
-        }
-        Relationships: []
-      }
-      committee_members: {
-        Row: {
-          bio: string | null
-          created_at: string
-          email: string | null
-          id: string
-          image_url: string | null
-          name: string
-          order_index: number | null
-          phone: string | null
-          role: string
-          updated_at: string
-        }
-        Insert: {
-          bio?: string | null
-          created_at?: string
-          email?: string | null
-          id?: string
-          image_url?: string | null
-          name: string
-          order_index?: number | null
-          phone?: string | null
-          role: string
-          updated_at?: string
-        }
-        Update: {
-          bio?: string | null
-          created_at?: string
-          email?: string | null
-          id?: string
-          image_url?: string | null
-          name?: string
-          order_index?: number | null
-          phone?: string | null
-          role?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      contact_messages: {
-        Row: {
-          created_at: string
+          created_at: string | null
           email: string
           id: string
-          message: string
-          name: string
-          status: string | null
-          updated_at: string
+          updated_at: string | null
         }
         Insert: {
-          created_at?: string
+          created_at?: string | null
           email: string
-          id?: string
-          message: string
-          name: string
-          status?: string | null
-          updated_at?: string
+          id: string
+          updated_at?: string | null
         }
         Update: {
-          created_at?: string
+          created_at?: string | null
           email?: string
           id?: string
-          message?: string
-          name?: string
-          status?: string | null
-          updated_at?: string
+          updated_at?: string | null
         }
         Relationships: []
       }
-      website_content: {
+      conference_content: {
         Row: {
-          created_at: string
+          content: string | null
+          created_at: string | null
           id: string
-          key: string
+          image_url: string | null
+          is_active: boolean | null
+          order_index: number | null
           section: string
-          type: string
-          updated_at: string
-          value: string | null
+          subtitle: string | null
+          title: string | null
+          updated_at: string | null
         }
         Insert: {
-          created_at?: string
+          content?: string | null
+          created_at?: string | null
           id?: string
-          key: string
+          image_url?: string | null
+          is_active?: boolean | null
+          order_index?: number | null
           section: string
-          type?: string
-          updated_at?: string
-          value?: string | null
+          subtitle?: string | null
+          title?: string | null
+          updated_at?: string | null
         }
         Update: {
-          created_at?: string
+          content?: string | null
+          created_at?: string | null
           id?: string
-          key?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          order_index?: number | null
           section?: string
-          type?: string
-          updated_at?: string
-          value?: string | null
+          subtitle?: string | null
+          title?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      registrations: {
+        Row: {
+          abstract_content: string | null
+          abstract_title: string | null
+          affiliation: string | null
+          category: string
+          created_at: string | null
+          email: string
+          full_name: string
+          id: string
+          payment_status: string | null
+          phone: string | null
+          presentation_type: string | null
+          registration_fee: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          abstract_content?: string | null
+          abstract_title?: string | null
+          affiliation?: string | null
+          category: string
+          created_at?: string | null
+          email: string
+          full_name: string
+          id?: string
+          payment_status?: string | null
+          phone?: string | null
+          presentation_type?: string | null
+          registration_fee?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          abstract_content?: string | null
+          abstract_title?: string | null
+          affiliation?: string | null
+          category?: string
+          created_at?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          payment_status?: string | null
+          phone?: string | null
+          presentation_type?: string | null
+          registration_fee?: number | null
+          updated_at?: string | null
         }
         Relationships: []
       }
