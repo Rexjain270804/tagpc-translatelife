@@ -2,9 +2,11 @@ import { Download, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
+import { useCFPFile, getCFPFileUrl } from '@/hooks/useCFPFile';
 
 const CFPSection = () => {
   const { data: content } = useWebsiteContent();
+  const { data: cfpFile } = useCFPFile();
 
   const getContent = (section: string, key: string) => {
     return content?.find(c => c.section === section && c.key === key)?.value || '';
@@ -29,7 +31,14 @@ const CFPSection = () => {
                 <Button 
                   size="lg" 
                   className="transition-all duration-300 transform hover:scale-105"
-                  onClick={() => window.open('/cfp.pdf', '_blank')}
+                  onClick={() => {
+                    if (cfpFile) {
+                      window.open(getCFPFileUrl(cfpFile.name), '_blank');
+                    } else {
+                      alert('CFP file is not available yet. Please check back later.');
+                    }
+                  }}
+                  disabled={!cfpFile}
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Full Call for Papers

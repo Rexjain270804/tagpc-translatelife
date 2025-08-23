@@ -2,7 +2,7 @@ import { Download, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 import { useToast } from '@/hooks/use-toast';
-import logoImage from '@/assets/logo.png';
+import logoImage from '@/assets/conference-logo.png';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();

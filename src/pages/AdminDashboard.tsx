@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Save, MessageSquare, Users, FileText } from 'lucide-react';
+import { LogOut, Save, MessageSquare, Users, FileText, Upload, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { useWebsiteContent, useUpdateWebsiteContent, useCommitteeMembers, useContactMessages } from '@/hooks/useWebsiteContent';
+import { useCFPFile, useUploadCFPFile, getCFPFileUrl } from '@/hooks/useCFPFile';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -16,9 +17,12 @@ const AdminDashboard = () => {
   const { data: content } = useWebsiteContent();
   const { data: committeeMembers } = useCommitteeMembers();
   const { data: contactMessages } = useContactMessages();
+  const { data: cfpFile } = useCFPFile();
   const updateContent = useUpdateWebsiteContent();
+  const uploadCFP = useUploadCFPFile();
   
   const [editableContent, setEditableContent] = useState<Record<string, string>>({});
+  const [cfpFileInput, setCfpFileInput] = useState<File | null>(null);
 
   useEffect(() => {
     // Check admin session
@@ -54,6 +58,32 @@ const AdminDashboard = () => {
       toast({
         title: "Update Failed",
         description: "Failed to update content. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleCFPUpload = async () => {
+    if (!cfpFileInput) {
+      toast({
+        title: "No File Selected",
+        description: "Please select a PDF file to upload.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await uploadCFP.mutateAsync(cfpFileInput);
+      setCfpFileInput(null);
+      toast({
+        title: "CFP Uploaded",
+        description: "Call for Papers PDF has been uploaded successfully.",
+      });
+    } catch (error) {
+      toast({
+        title: "Upload Failed",
+        description: "Failed to upload CFP file. Please try again.",
         variant: "destructive",
       });
     }
@@ -156,6 +186,36 @@ const AdminDashboard = () => {
                 <CardContent className="space-y-4">
                   {renderContentEditor('cfp', 'title', 'CFP Title')}
                   {renderContentEditor('cfp', 'intro', 'CFP Introduction', 'textarea')}
+                  
+                  {/* CFP File Upload */}
+                  <div className="space-y-2 border-t pt-4">
+                    <Label>CFP PDF File</Label>
+                    {cfpFile && (
+                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                        <span>Current file: {cfpFile.name}</span>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => window.open(getCFPFileUrl(cfpFile.name), '_blank')}
+                        >
+                          <Download className="h-4 w-4 mr-1" />
+                          Download
+                        </Button>
+                      </div>
+                    )}
+                    <Input
+                      type="file"
+                      accept=".pdf"
+                      onChange={(e) => setCfpFileInput(e.target.files?.[0] || null)}
+                    />
+                    <Button
+                      onClick={handleCFPUpload}
+                      disabled={!cfpFileInput || uploadCFP.isPending}
+                    >
+                      <Upload className="h-4 w-4 mr-1" />
+                      Upload CFP PDF
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
