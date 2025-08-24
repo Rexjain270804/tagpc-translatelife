@@ -14,11 +14,11 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-              {getContent('about', 'title') || 'About the Conference'}
+                  About the Conference
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              {getContent('about', 'content') || 'The International Conference on Translating Across Genres brings together scholars, practitioners, and industry experts to explore the evolving landscape of translation studies in the digital era.'}
+                  With globalization and digital media, the demand for specialized translation has grown exponentially. This conference addresses the need for tailored approaches to ensure accuracy, cultural relevance, and functional effectiveness across genres. It celebrates the diversity of translation across all genres and specializations, from literary and technical translation to multimedia localization and AI-driven solutions. Scholars, translators, linguists, and industry professionals will discuss the complexities of translating different genres—such as literary, technical, legal, medical, audiovisual, and digital texts.
             </p>
             
             <div className="space-y-4">

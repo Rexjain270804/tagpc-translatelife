@@ -17,7 +17,6 @@ const Index = () => {
       <CFPSection />
       <ThemesSection />
       <RegistrationSection />
-      <CommitteeSection />
       <ContactSection />
       <Footer />
     </div>

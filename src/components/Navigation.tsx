@@ -46,12 +46,6 @@ const Navigation = () => {
               Important Dates
             </button>
             <button
-              onClick={() => scrollToSection('committee')}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Committee
-            </button>
-            <button
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors"
             >

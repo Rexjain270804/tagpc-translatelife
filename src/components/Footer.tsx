@@ -33,24 +33,24 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span className="text-primary-foreground/80 text-sm">
-                  internationalconferenceasl@gmail.com
-                </span>
+                    <span className="text-primary-foreground/80 text-sm">
+                      internationalconferenceasl@gmail.com
+                    </span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span className="text-primary-foreground/80 text-sm">
-                  Jaipur, India
-                </span>
+                    <span className="text-primary-foreground/80 text-sm">
+                      Amity University Rajasthan, Jaipur, India
+                    </span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/60">
-            © 2025 Amity School of Languages. All rights reserved.
-          </p>
+              <p className="text-primary-foreground/60">
+                © {new Date().getFullYear()} International Conference on Translation Studies (TAG-PC). All rights reserved.
+              </p>
         </div>
       </div>
     </footer>
