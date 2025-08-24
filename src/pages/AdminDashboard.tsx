@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { useWebsiteContent, useUpdateWebsiteContent, useCommitteeMembers, useContactMessages } from '@/hooks/useWebsiteContent';
+import { useRegistrations } from '@/hooks/useRegistration';
 import { useCFPFile, useUploadCFPFile, getCFPFileUrl } from '@/hooks/useCFPFile';
 
 const AdminDashboard = () => {
@@ -18,6 +19,7 @@ const AdminDashboard = () => {
   const { data: committeeMembers } = useCommitteeMembers();
   const { data: contactMessages } = useContactMessages();
   const { data: cfpFile } = useCFPFile();
+  const { data: registrations } = useRegistrations();
   const updateContent = useUpdateWebsiteContent();
   const uploadCFP = useUploadCFPFile();
   
@@ -41,6 +43,17 @@ const AdminDashboard = () => {
       setEditableContent(contentMap);
     }
   }, [navigate, content]);
+
+  // Debug logging for data fetching
+  useEffect(() => {
+    console.log('Admin Dashboard Data:', {
+      content: content?.length || 0,
+      committeeMembers: committeeMembers?.length || 0,
+      contactMessages: contactMessages?.length || 0,
+      registrations: registrations?.length || 0,
+      cfpFile
+    });
+  }, [content, committeeMembers, contactMessages, registrations, cfpFile]);
 
   const handleLogout = () => {
     localStorage.removeItem('adminSession');
@@ -136,10 +149,14 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="content" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="content">
               <FileText className="h-4 w-4 mr-2" />
               Content
+            </TabsTrigger>
+            <TabsTrigger value="registrations">
+              <Users className="h-4 w-4 mr-2" />
+              Registrations ({registrations?.length || 0})
             </TabsTrigger>
             <TabsTrigger value="committee">
               <Users className="h-4 w-4 mr-2" />
@@ -245,6 +262,67 @@ const AdminDashboard = () => {
             </div>
           </TabsContent>
 
+          {/* Registrations Management */}
+          <TabsContent value="registrations">
+            <Card>
+              <CardHeader>
+                <CardTitle>Conference Registrations</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {registrations?.length ? (
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse border border-border">
+                        <thead>
+                          <tr className="bg-muted">
+                            <th className="border border-border p-3 text-left">Name</th>
+                            <th className="border border-border p-3 text-left">Email</th>
+                            <th className="border border-border p-3 text-left">Category</th>
+                            <th className="border border-border p-3 text-left">Affiliation</th>
+                            <th className="border border-border p-3 text-left">Abstract Title</th>
+                            <th className="border border-border p-3 text-left">Presentation</th>
+                            <th className="border border-border p-3 text-left">Status</th>
+                            <th className="border border-border p-3 text-left">Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {registrations.map((registration) => (
+                            <tr key={registration.id} className="hover:bg-muted/50">
+                              <td className="border border-border p-3">{registration.full_name}</td>
+                              <td className="border border-border p-3">{registration.email}</td>
+                              <td className="border border-border p-3">
+                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-primary/10 text-primary">
+                                  {registration.category}
+                                </span>
+                              </td>
+                              <td className="border border-border p-3">{registration.affiliation || 'N/A'}</td>
+                              <td className="border border-border p-3">{registration.abstract_title || 'N/A'}</td>
+                              <td className="border border-border p-3">{registration.presentation_type || 'N/A'}</td>
+                              <td className="border border-border p-3">
+                                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
+                                  registration.payment_status === 'paid' 
+                                    ? 'bg-green-100 text-green-800' 
+                                    : 'bg-yellow-100 text-yellow-800'
+                                }`}>
+                                  {registration.payment_status}
+                                </span>
+                              </td>
+                              <td className="border border-border p-3">
+                                {new Date(registration.created_at).toLocaleDateString()}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="text-muted-foreground text-center py-8">No registrations yet.</p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
           {/* Committee Management */}
           <TabsContent value="committee">
             <Card>
@@ -273,19 +351,37 @@ const AdminDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {contactMessages?.map((message) => (
-                    <div key={message.id} className="p-4 border rounded-lg">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-semibold">{message.name}</h3>
-                        <span className="text-sm text-muted-foreground">
-                          {new Date(message.created_at).toLocaleDateString()}
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-2">{message.email}</p>
-                      <p className="text-sm">{message.message}</p>
+                  {contactMessages?.length ? (
+                    <div className="overflow-x-auto">
+                      <table className="w-full border-collapse border border-border">
+                        <thead>
+                          <tr className="bg-muted">
+                            <th className="border border-border p-3 text-left">Name</th>
+                            <th className="border border-border p-3 text-left">Email</th>
+                            <th className="border border-border p-3 text-left">Message</th>
+                            <th className="border border-border p-3 text-left">Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {contactMessages.map((message) => (
+                            <tr key={message.id} className="hover:bg-muted/50">
+                              <td className="border border-border p-3 font-medium">{message.name}</td>
+                              <td className="border border-border p-3">{message.email}</td>
+                              <td className="border border-border p-3 max-w-md">
+                                <div className="truncate" title={message.message}>
+                                  {message.message}
+                                </div>
+                              </td>
+                              <td className="border border-border p-3">
+                                {new Date(message.created_at).toLocaleDateString()}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                  )) || (
-                    <p className="text-muted-foreground">No messages yet.</p>
+                  ) : (
+                    <p className="text-muted-foreground text-center py-8">No messages yet.</p>
                   )}
                 </div>
               </CardContent>
