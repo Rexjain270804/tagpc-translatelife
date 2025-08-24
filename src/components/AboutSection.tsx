@@ -24,15 +24,15 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Globe className="h-6 w-6 text-accent" />
-                <span className="text-accent-foreground">Global perspectives on translation</span>
+                <span className="text-foreground">Global perspectives on translation</span>
               </div>
               <div className="flex items-center space-x-3">
                 <BookOpen className="h-6 w-6 text-primary" />
-                <span className="text-primary-foreground">Academic and industry collaboration</span>
+                <span className="text-foreground">Academic and industry collaboration</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Users className="h-6 w-6 text-accent" />
-                <span className="text-accent-foreground">Interdisciplinary research focus</span>
+                <span className="text-foreground">Interdisciplinary research focus</span>
               </div>
             </div>
           </div>

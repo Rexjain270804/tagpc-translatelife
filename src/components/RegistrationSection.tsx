@@ -58,11 +58,123 @@ const RegistrationSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Registration
+            Registration Plans
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Registration and payment details will be provided along with the acceptance notification
+            Choose your registration plan. Payment details will be provided with acceptance notification.
           </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* Student Plan */}
+          <Card className="border-primary/20 relative">
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl text-primary">Student</CardTitle>
+              <div className="text-3xl font-bold text-foreground">₹2,500</div>
+              <p className="text-sm text-muted-foreground">Per participant</p>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference attendance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Abstract submission</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference materials</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Certificate</span>
+              </div>
+              <Button className="w-full mt-4" disabled>
+                <Clock className="mr-2 h-4 w-4" />
+                Coming Soon
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Faculty Plan */}
+          <Card className="border-primary/20 relative ring-2 ring-primary">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                Popular
+              </div>
+            </div>
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl text-primary">Faculty</CardTitle>
+              <div className="text-3xl font-bold text-foreground">₹3,500</div>
+              <p className="text-sm text-muted-foreground">Per participant</p>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference attendance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Abstract submission</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference materials</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Certificate</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Lunch included</span>
+              </div>
+              <Button className="w-full mt-4" disabled>
+                <Clock className="mr-2 h-4 w-4" />
+                Coming Soon
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Industry Plan */}
+          <Card className="border-primary/20 relative">
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl text-primary">Industry</CardTitle>
+              <div className="text-3xl font-bold text-foreground">₹5,000</div>
+              <p className="text-sm text-muted-foreground">Per participant</p>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference attendance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Abstract submission</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Conference materials</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Certificate</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">All meals included</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <span className="text-sm">Networking events</span>
+              </div>
+              <Button className="w-full mt-4" disabled>
+                <Clock className="mr-2 h-4 w-4" />
+                Coming Soon
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -72,36 +184,20 @@ const RegistrationSection = () => {
                 <div className="mb-4">
                   <User className="h-16 w-16 text-primary mx-auto" />
                 </div>
-                <CardTitle className="text-2xl text-primary">Conference Registration</CardTitle>
+                <CardTitle className="text-2xl text-primary">Submit Your Abstract</CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-6">
                 <p className="text-muted-foreground">
-                  Submit your registration and abstract for the International Conference on Applied Linguistics.
-                  Registration includes abstract submission and conference participation.
+                  Submit your abstract now for review. Registration and payment will open after acceptance notification.
                 </p>
                 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                    <CreditCard className="h-4 w-4" />
-                    <span>Multiple payment options available</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    <span>Early bird discounts available</span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                    <FileText className="h-4 w-4" />
-                    <span>Abstract submission included</span>
-                  </div>
-                </div>
-
                 <Button 
                   size="lg" 
                   className="w-full max-w-sm"
                   onClick={() => setShowForm(true)}
                 >
                   <Send className="mr-2 h-4 w-4" />
-                  Register Now
+                  Submit Abstract
                 </Button>
               </CardContent>
             </Card>
