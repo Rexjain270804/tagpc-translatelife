@@ -44,6 +44,17 @@ const AdminDashboard = () => {
     }
   }, [navigate, content]);
 
+  // Debug logging for data fetching
+  useEffect(() => {
+    console.log('Admin Dashboard Data:', {
+      content: content?.length || 0,
+      committeeMembers: committeeMembers?.length || 0,
+      contactMessages: contactMessages?.length || 0,
+      registrations: registrations?.length || 0,
+      cfpFile
+    });
+  }, [content, committeeMembers, contactMessages, registrations, cfpFile]);
+
   const handleLogout = () => {
     localStorage.removeItem('adminSession');
     navigate('/admin/login');
