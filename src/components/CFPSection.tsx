@@ -2,11 +2,10 @@ import { Download, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
-import { useCFPFile, getCFPFileUrl } from '@/hooks/useCFPFile';
+import cfpPdf from '@/assets/CFP for International Conference 2025 ASL.pdf';
 
 const CFPSection = () => {
   const { data: content } = useWebsiteContent();
-  const { data: cfpFile } = useCFPFile();
 
   const getContent = (section: string, key: string) => {
     return content?.find(c => c.section === section && c.key === key)?.value || '';
@@ -30,7 +29,7 @@ const CFPSection = () => {
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary px-8 py-4 text-base font-semibold"
               onClick={() => {
-                window.open('/src/assets/CFP%20for%20International%20Conference%202025%20ASL.pdf', '_blank');
+                window.open(cfpPdf, '_blank');
               }}
             >
               <Download className="mr-2 h-5 w-5" />

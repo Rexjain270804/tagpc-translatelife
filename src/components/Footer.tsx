@@ -49,7 +49,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
               <p className="text-primary-foreground/60">
-                © {new Date().getFullYear()} International Conference on Translation Studies (TAG-PC). All rights reserved.
+                © {new Date().getFullYear()} International Conference on Translation Studies (TAG-PC). All rights reserved by JSP Coders.
               </p>
         </div>
       </div>

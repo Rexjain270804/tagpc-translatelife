@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { useWebsiteContent, useUpdateWebsiteContent, useCommitteeMembers, useContactMessages } from '@/hooks/useWebsiteContent';
+import { useWebsiteContent, useUpdateWebsiteContent, useContactMessages } from '@/hooks/useWebsiteContent';
 import { useRegistrations } from '@/hooks/useRegistration';
 import { useCFPFile, useUploadCFPFile, getCFPFileUrl } from '@/hooks/useCFPFile';
 
@@ -16,7 +16,6 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { data: content } = useWebsiteContent();
-  const { data: committeeMembers } = useCommitteeMembers();
   const { data: contactMessages } = useContactMessages();
   const { data: cfpFile } = useCFPFile();
   const { data: registrations } = useRegistrations();
@@ -48,12 +47,11 @@ const AdminDashboard = () => {
   useEffect(() => {
     console.log('Admin Dashboard Data:', {
       content: content?.length || 0,
-      committeeMembers: committeeMembers?.length || 0,
       contactMessages: contactMessages?.length || 0,
       registrations: registrations?.length || 0,
       cfpFile
     });
-  }, [content, committeeMembers, contactMessages, registrations, cfpFile]);
+  }, [content, contactMessages, registrations, cfpFile]);
 
   const handleLogout = () => {
     localStorage.removeItem('adminSession');
@@ -149,7 +147,7 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="content" className="w-full">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="content">
               <FileText className="h-4 w-4 mr-2" />
               Content
@@ -158,13 +156,12 @@ const AdminDashboard = () => {
               <Users className="h-4 w-4 mr-2" />
               Registrations ({registrations?.length || 0})
             </TabsTrigger>
-            <TabsTrigger value="committee">
-              <Users className="h-4 w-4 mr-2" />
-              Committee
-            </TabsTrigger>
             <TabsTrigger value="messages">
               <MessageSquare className="h-4 w-4 mr-2" />
               Messages ({contactMessages?.length || 0})
+              {(contactMessages?.length || 0) > 0 && (
+                <span className="ml-1 bg-red-500 text-white text-xs rounded-full px-1">NEW</span>
+              )}
             </TabsTrigger>
             <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
@@ -323,25 +320,6 @@ const AdminDashboard = () => {
             </Card>
           </TabsContent>
 
-          {/* Committee Management */}
-          <TabsContent value="committee">
-            <Card>
-              <CardHeader>
-                <CardTitle>Committee Members</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {committeeMembers?.map((member) => (
-                    <div key={member.id} className="p-4 border rounded-lg">
-                      <h3 className="font-semibold">{member.name}</h3>
-                      <p className="text-muted-foreground">{member.role}</p>
-                      {member.email && <p className="text-sm">{member.email}</p>}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
 
           {/* Messages */}
           <TabsContent value="messages">

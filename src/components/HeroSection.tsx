@@ -1,23 +1,14 @@
-import { Download, Users } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
-import { useToast } from '@/hooks/use-toast';
 import logoImage from '@/assets/conference-logo.png';
-import { supabase } from '@/integrations/supabase/client';
+import cfpPdf from '@/assets/CFP for International Conference 2025 ASL.pdf';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();
-  const { toast } = useToast();
 
   const getContent = (section: string, key: string) => {
     return content?.find(c => c.section === section && c.key === key)?.value || '';
-  };
-
-  const handleRegistrationClick = () => {
-    toast({
-      title: "Coming Soon",
-      description: "Registration will open soon. Stay tuned for updates!",
-    });
   };
 
   return (
@@ -43,7 +34,7 @@ const HeroSection = () => {
           </div>
           <div className="mt-2 text-base text-white">Organized by: <span className="font-semibold text-white">Amity School of Languages, Amity University Rajasthan</span></div>
           <div className="flex justify-center mt-8">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary min-w-[220px]" onClick={() => window.open('/src/assets/CFP%20for%20International%20Conference%202025%20ASL.pdf', '_blank')}>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary min-w-[220px]" onClick={() => window.open(cfpPdf, '_blank')}>
               <Download className="mr-2 h-5 w-5" />
               Download Call for Papers
             </Button>

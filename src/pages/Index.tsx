@@ -4,7 +4,6 @@ import AboutSection from '@/components/AboutSection';
 import CFPSection from '@/components/CFPSection';
 import ThemesSection from '@/components/ThemesSection';
 import RegistrationSection from '@/components/RegistrationSection';
-// import CommitteeSection from '@/components/CommitteeSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
