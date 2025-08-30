@@ -2,7 +2,8 @@ import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 import logoImage from '@/assets/conference-logo.png';
-import cfpPdf from '@/assets/CFP for International Conference 2025 ASL.pdf';
+// PDF should be placed in public/ folder, not src/assets
+const cfpPdfUrl = '/CFP%20for%20International%20Conference%202025%20ASL.pdf';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();
@@ -28,13 +29,13 @@ const HeroSection = () => {
             International Conference on Translation Studies
           </h1>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-medium mb-4">
-            <span className="bg-primary/30 px-4 py-2 rounded-xl text-white">Theme: <span className="font-bold text-white">Translating across Genres: Practices & Challenges (TAG-PC)</span></span>
+            <span className="bg-primary/30 px-4 py-2 rounded-xl text-white">Theme: <span className="font-bold text-white">Translating Across Genres: Practices & Challenges (TAG-PC)</span></span>
             <span className="bg-accent/30 px-4 py-2 rounded-xl text-white">Dates: <span className="font-bold text-white">03 – 04 November 2025</span></span>
             <span className="bg-background/40 px-4 py-2 rounded-xl text-white">Location: <span className="font-bold text-white">Amity University Rajasthan, Jaipur, India</span></span>
           </div>
           <div className="mt-2 text-base text-white">Organized by: <span className="font-semibold text-white">Amity School of Languages, Amity University Rajasthan</span></div>
           <div className="flex justify-center mt-8">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary min-w-[220px]" onClick={() => window.open(cfpPdf, '_blank')}>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-md border border-primary min-w-[220px]" onClick={() => window.open(cfpPdfUrl, '_blank')}>
               <Download className="mr-2 h-5 w-5" />
               Download Call for Papers
             </Button>

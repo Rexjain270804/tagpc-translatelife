@@ -2,7 +2,7 @@ import { Download, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
-import cfpPdf from '@/assets/CFP for International Conference 2025 ASL.pdf';
+import cfpPdf from '../../public/CFP for International Conference 2025 ASL.pdf';
 
 const CFPSection = () => {
   const { data: content } = useWebsiteContent();
