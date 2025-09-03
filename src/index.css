@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Amity University Brand Color System */
+/* Enhanced Amity University Brand Color System */
 
 @layer base {
   :root {
-    /* Core brand */
-    --background: 0 0% 100%;
+    /* Base brand */
+    --background: 220 20% 97%; /* Soft Gray */
     --foreground: 219 56% 23%; /* Navy */
 
     --card: 0 0% 100%;
@@ -16,25 +16,32 @@
     --popover: 0 0% 100%;
     --popover-foreground: 219 56% 23%;
 
-    /* Brand colors */
+    /* Primary brand colors */
     --primary: 219 56% 23%; /* Navy */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 47 100% 51%; /* Golden Yellow */
+    --secondary: 47 100% 51%; /* Gold */
     --secondary-foreground: 219 56% 23%; /* Navy */
 
-    --muted: 219 30% 90%;
-    --muted-foreground: 219 20% 40%;
+    /* Supporting helper colors */
+    --accent: 217 91% 60%; /* Light Blue */
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 47 100% 51%; /* Golden Yellow */
-    --accent-foreground: 219 56% 23%; /* Navy */
+    --muted: 220 20% 90%;
+    --muted-foreground: 215 28% 17%; /* Dark Gray */
+
+    --success: 142 71% 45%; /* Green */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 24 95% 53%; /* Orange */
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 219 30% 80%;
-    --input: 219 30% 80%;
-    --ring: 47 100% 51%; /* Gold accent */
+    --border: 220 20% 80%;
+    --input: 220 20% 80%;
+    --ring: 47 100% 51%; /* Gold */
 
     /* Amity specific */
     --amity-navy: 219 56% 23%;
@@ -53,12 +60,12 @@
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 47 100% 51%;
     --sidebar-accent-foreground: 219 56% 23%;
-    --sidebar-border: 219 30% 80%;
+    --sidebar-border: 220 20% 80%;
     --sidebar-ring: 47 100% 51%;
   }
 
   .dark {
-    --background: 219 56% 23%;
+    --background: 219 56% 23%; /* Navy */
     --foreground: 0 0% 100%;
 
     --card: 219 56% 23%;
@@ -67,17 +74,24 @@
     --popover: 219 56% 23%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 47 100% 51%;
+    --primary: 47 100% 51%; /* Gold */
     --primary-foreground: 219 56% 23%;
 
-    --secondary: 219 40% 30%;
+    --secondary: 219 40% 30%; /* Darker Navy */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 219 40% 30%;
-    --muted-foreground: 219 20% 70%;
+    /* Supporting helper colors dark mode */
+    --accent: 217 91% 70%; /* Brighter Blue */
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 47 100% 51%;
-    --accent-foreground: 219 56% 23%;
+    --muted: 219 40% 30%;
+    --muted-foreground: 220 20% 80%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 24 95% 53%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
@@ -99,7 +113,7 @@
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 47 100% 51%;
     --sidebar-primary-foreground: 219 56% 23%;
-    --sidebar-accent: 219 40% 30%;
+    --sidebar-accent: 217 91% 60%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 219 40% 30%;
     --sidebar-ring: 47 100% 51%;
