@@ -12,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em hsl(var(--primary)));
+  filter: drop-shadow(0 0 2em hsl(var(--amity-navy)));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em hsl(var(--conference-gold)));
+  filter: drop-shadow(0 0 2em hsl(var(--amity-gold)));
 }
 
 @keyframes logo-spin {

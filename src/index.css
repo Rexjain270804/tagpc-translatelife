@@ -2,110 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Amity University Brand Color System */
 
 @layer base {
   :root {
+    /* Core brand */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 219 56% 23%; /* Navy */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 219 56% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 219 56% 23%;
 
-    /* Conference orange/golden theme based on logo */
-    --primary: 33 100% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Brand colors */
+    --primary: 219 56% 23%; /* Navy */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 33 20% 95%;
-    --secondary-foreground: 33 100% 40%;
+    --secondary: 47 100% 51%; /* Golden Yellow */
+    --secondary-foreground: 219 56% 23%; /* Navy */
 
-    --muted: 33 15% 95%;
-    --muted-foreground: 33 20% 45%;
+    --muted: 219 30% 90%;
+    --muted-foreground: 219 20% 40%;
 
-    --accent: 33 25% 90%;
-    --accent-foreground: 33 100% 40%;
+    --accent: 47 100% 51%; /* Golden Yellow */
+    --accent-foreground: 219 56% 23%; /* Navy */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 33 15% 85%;
-    --input: 33 15% 85%;
-    --ring: 33 100% 50%;
+    --border: 219 30% 80%;
+    --input: 219 30% 80%;
+    --ring: 47 100% 51%; /* Gold accent */
 
-    /* Conference specific colors */
-    --conference-orange: 33 100% 50%;
-    --conference-gold: 45 100% 75%;
-    --conference-light: 33 25% 90%;
-    --conference-gradient: linear-gradient(135deg, hsl(33 100% 50%), hsl(45 100% 75%));
-    --hero-gradient: linear-gradient(135deg, hsl(33 100% 50%) 0%, hsl(45 100% 75%) 100%);
+    /* Amity specific */
+    --amity-navy: 219 56% 23%;
+    --amity-gold: 47 100% 51%;
+    --amity-white: 0 0% 100%;
+    --amity-black: 0 0% 0%;
+
+    --amity-gradient: linear-gradient(135deg, hsl(219 56% 23%), hsl(47 100% 51%));
+    --hero-gradient: linear-gradient(135deg, hsl(47 100% 51%) 0%, hsl(219 56% 23%) 100%);
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 219 56% 23%;
+    --sidebar-primary: 219 56% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 47 100% 51%;
+    --sidebar-accent-foreground: 219 56% 23%;
+    --sidebar-border: 219 30% 80%;
+    --sidebar-ring: 47 100% 51%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 219 56% 23%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 219 56% 23%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 219 56% 23%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 33 100% 60%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 47 100% 51%;
+    --primary-foreground: 219 56% 23%;
 
-    --secondary: 33 25% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 219 40% 30%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 33 25% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 219 40% 30%;
+    --muted-foreground: 219 20% 70%;
 
-    --accent: 33 25% 20%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 47 100% 51%;
+    --accent-foreground: 219 56% 23%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 33 25% 20%;
-    --input: 33 25% 20%;
-    --ring: 33 100% 60%;
+    --border: 219 40% 30%;
+    --input: 219 40% 30%;
+    --ring: 47 100% 51%;
 
-    /* Conference colors for dark mode */
-    --conference-orange: 33 100% 60%;
-    --conference-gold: 45 100% 75%;
-    --conference-light: 33 25% 20%;
-    --conference-gradient: linear-gradient(135deg, hsl(33 100% 60%), hsl(45 100% 75%));
-    --hero-gradient: linear-gradient(135deg, hsl(33 100% 40%) 0%, hsl(222.2 84% 4.9%) 100%);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Amity Dark Mode */
+    --amity-navy: 219 56% 23%;
+    --amity-gold: 47 100% 51%;
+    --amity-white: 0 0% 100%;
+    --amity-black: 0 0% 0%;
+
+    --amity-gradient: linear-gradient(135deg, hsl(47 100% 51%), hsl(219 56% 23%));
+    --hero-gradient: linear-gradient(135deg, hsl(47 100% 51%) 0%, hsl(219 56% 23%) 100%);
+
+    --sidebar-background: 219 56% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 47 100% 51%;
+    --sidebar-primary-foreground: 219 56% 23%;
+    --sidebar-accent: 219 40% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 219 40% 30%;
+    --sidebar-ring: 47 100% 51%;
   }
 }
 
