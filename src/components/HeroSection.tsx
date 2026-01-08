@@ -2,8 +2,8 @@ import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 import logoImage from '@/assets/conference-logo.png';
-// PDF should be placed in public/ folder, not src/assets
-const cfpPdfUrl = '/CFP%20for%20International%20Conference%202025%20ASL.pdf';
+// PDF should be placed in public/ folder
+const cfpPdfUrl = '/CFP TAG-PC.pdf';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();
@@ -43,13 +43,13 @@ const HeroSection = () => {
 
           {/* Conference Details */}
           <div className="animate-fade-in-up flex flex-col lg:flex-row justify-center items-center gap-4 text-base sm:text-lg font-medium mb-6" style={{ animationDelay: '0.4s' }}>
-            <div className="glass px-6 py-3 rounded-2xl text-primary-foreground border border-primary/20">
+            <div className="glass px-6 py-3 rounded-2xl text-secondary border border-primary/20">
               <span className="font-semibold">Theme:</span> <span className="font-bold">Translating Across Genres: Practices & Challenges (TAG-PC)</span>
             </div>
-            <div className="glass px-6 py-3 rounded-2xl text-primary-foreground border border-secondary/20">
+            <div className="glass px-6 py-3 rounded-2xl text-secondary border border-secondary/20">
               <span className="font-semibold">Dates:</span> <span className="font-bold">29 – 30 January 2026</span>
             </div>
-            <div className="glass px-6 py-3 rounded-2xl text-primary-foreground border border-accent/20">
+            <div className="glass px-6 py-3 rounded-2xl text-secondary border border-accent/20">
               <span className="font-semibold">Location:</span> <span className="font-bold">Amity University Rajasthan, Jaipur</span>
             </div>
           </div>

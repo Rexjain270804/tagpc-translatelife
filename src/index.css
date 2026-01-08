@@ -6,127 +6,122 @@
 
 @layer base {
   :root {
-    /* Base brand - Soft backgrounds with Amity influence */
-    --background: 210 20% 98%;
-    /* Very light blue-gray */
-    --foreground: 215 70% 25%;
-    /* Amity deep blue */
+    /* Typography - Dark text on Light Blue background */
+    --background: 215 50% 90%;
+    /* Light Blue for all components except Hero */
+    --foreground: 225 73% 20%;
+    /* Dark Navy Text */
 
+    /* Primary Base - Navy & Royal Blue */
+    --primary: 225 73% 35%;
+    /* Navy Blue */
+    --primary-foreground: 0 0% 100%;
+
+    /* Highlight - Golden Yellow */
+    --secondary: 48 96% 51%;
+    /* Golden Yellow */
+    --secondary-foreground: 225 73% 35%;
+    /* Navy Text on Gold */
+
+    /* Contrast - Bright Orange */
+    --accent: 25 100% 50%;
+    /* Bright Orange */
+    --accent-foreground: 0 0% 100%;
+
+    /* Cards & Popovers */
     --card: 0 0% 100%;
-    --card-foreground: 215 70% 25%;
+    --card-foreground: 225 73% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 70% 25%;
+    --popover-foreground: 225 73% 20%;
 
-    /* Primary brand colors - Amity Logo Blue */
-    --primary: 215 70% 35%;
-    /* Amity Blue */
-    --primary-foreground: 0 0% 100%;
-    /* White */
+    /* Helpers */
+    --muted: 215 30% 90%;
+    /* Slightly darker blue-grey for gradients */
+    --muted-foreground: 215 40% 40%;
 
-    /* Secondary - Amity Logo Gold */
-    --secondary: 45 95% 55%;
-    /* Amity Gold */
-    --secondary-foreground: 215 70% 25%;
-    /* Navy */
-
-    /* Supporting helper colors */
-    --accent: 45 90% 60%;
-    /* Light Gold */
-    --accent-foreground: 215 70% 25%;
-
-    --muted: 210 20% 92%;
-    --muted-foreground: 215 50% 35%;
-    /* Muted Blue */
-
-    --success: 142 71% 45%;
-    /* Green */
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 35 95% 60%;
-    /* Warm Orange */
-    --warning-foreground: 0 0% 100%;
+    --warning: 48 96% 51%;
+    /* Golden Yellow can double as warning or use orange */
+    --warning-foreground: 225 73% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 85%;
-    --input: 210 20% 85%;
-    --ring: 45 95% 55%;
-    /* Gold */
-
-    /* Amity specific colors from logo */
-    --amity-blue: 215 70% 35%;
-    --amity-gold: 45 95% 55%;
-    --amity-blue-dark: 215 80% 25%;
-    --amity-gold-light: 45 90% 65%;
-    --amity-white: 0 0% 100%;
-    --amity-black: 215 20% 15%;
-
-    /* Modern gradients */
-    --amity-gradient: linear-gradient(135deg, hsl(215 70% 35%), hsl(45 95% 55%));
-    --hero-gradient: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(215 70% 35%) 100%);
-    --glass-gradient: linear-gradient(135deg, hsl(215 70% 35% / 0.1), hsl(45 95% 55% / 0.1));
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 225 73% 35%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 219 56% 23%;
-    --sidebar-primary: 219 56% 23%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 47 100% 51%;
-    --sidebar-accent-foreground: 219 56% 23%;
-    --sidebar-border: 220 20% 80%;
-    --sidebar-ring: 47 100% 51%;
+    /* Amity specific colors mapped to new scheme */
+    --amity-blue: 225 73% 35%;
+    --amity-gold: 48 96% 51%;
+    --amity-blue-dark: 225 73% 20%;
+    --amity-gold-light: 48 96% 65%;
+    --amity-white: 0 0% 100%;
+    --amity-black: 225 73% 15%;
+
+    /* Modern gradients updated */
+    --amity-gradient: linear-gradient(135deg, hsl(225 73% 35%), hsl(48 96% 51%));
+    /* Hero Gradient explicitly defined mostly covering the background */
+    --hero-gradient: linear-gradient(135deg, hsl(48 96% 51%) 0%, hsl(225 73% 35%) 100%);
+    --glass-gradient: linear-gradient(135deg, hsl(225 73% 35% / 0.1), hsl(48 96% 51% / 0.1));
+
+    --sidebar-background: 225 73% 35%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 48 96% 51%;
+    --sidebar-primary-foreground: 225 73% 35%;
+    --sidebar-accent: 25 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 225 73% 45%;
+    --sidebar-ring: 48 96% 51%;
   }
 
   .dark {
-    --background: 215 80% 15%;
-    /* Dark Amity Blue */
+    /* Dark Mode - Deep Navy Background, White Text */
+    --background: 225 50% 10%;
     --foreground: 0 0% 100%;
 
-    --card: 215 70% 20%;
+    --card: 225 50% 13%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 215 70% 20%;
+    --popover: 225 50% 13%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 45 95% 55%;
-    /* Amity Gold */
-    --primary-foreground: 215 80% 15%;
+    /* Keep brands distinct but visible */
+    --primary: 225 73% 55%;
+    /* Lighter Royal Blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 60% 30%;
-    /* Darker Blue */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 48 96% 51%;
+    /* Gold */
+    --secondary-foreground: 225 73% 35%;
 
-    --accent: 45 90% 65%;
-    /* Light Gold */
-    --accent-foreground: 215 80% 15%;
+    --accent: 25 100% 60%;
+    /* Orange */
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 215 60% 25%;
+    --muted: 225 40% 20%;
     --muted-foreground: 210 20% 80%;
-
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 35 95% 60%;
-    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 50% 30%;
-    --input: 215 50% 30%;
-    --ring: 45 95% 55%;
+    --border: 225 40% 20%;
+    --input: 225 40% 20%;
+    --ring: 225 73% 55%;
 
-    --sidebar-background: 215 80% 15%;
+    --sidebar-background: 225 50% 10%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 45 95% 55%;
-    --sidebar-primary-foreground: 215 80% 15%;
-    --sidebar-accent: 45 90% 65%;
-    --sidebar-accent-foreground: 215 80% 15%;
-    --sidebar-border: 215 50% 30%;
-    --sidebar-ring: 45 95% 55%;
+    --sidebar-primary: 225 73% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 100% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 225 40% 20%;
+    --sidebar-ring: 225 73% 55%;
   }
 }
 
