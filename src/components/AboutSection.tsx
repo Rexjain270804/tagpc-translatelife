@@ -29,7 +29,7 @@ const AboutSection = () => {
             </h2>
 
             <div className="space-y-6">
-              <p className="text-base md:text-lg text-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-foreground leading-relaxed text-justify">
                 With globalization and digital media, the demand for specialized translation has grown exponentially. This conference addresses the need for tailored approaches to ensure accuracy, cultural relevance, and functional effectiveness across genres. We invite scholars, researchers, practitioners, and students to explore the latest developments, challenges, and innovations in the field of translation and interpreting in the era of digitalisation. This interdisciplinary conference aims to foster diversity of translation across all genres and specializations, from literary and technical translation to multimedia localization and AI-driven solutions.
               </p>
             </div>
