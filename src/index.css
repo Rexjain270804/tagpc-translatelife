@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Amity University Modern Brand Color System */
+
+@layer base {
+  :root {
+    /* Base brand - Soft backgrounds with Amity influence */
+    --background: 210 20% 98%; /* Very light blue-gray */
+    --foreground: 215 70% 25%; /* Amity deep blue */
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 70% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 70% 25%;
+
+    /* Primary brand colors - Amity Logo Blue */
+    --primary: 215 70% 35%; /* Amity Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    /* Secondary - Amity Logo Gold */
+    --secondary: 45 95% 55%; /* Amity Gold */
+    --secondary-foreground: 215 70% 25%; /* Navy */
+
+    /* Supporting helper colors */
+    --accent: 45 90% 60%; /* Light Gold */
+    --accent-foreground: 215 70% 25%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 215 50% 35%; /* Muted Blue */
+
+    --success: 142 71% 45%; /* Green */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 95% 60%; /* Warm Orange */
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 45 95% 55%; /* Gold */
+
+    /* Amity specific colors from logo */
+    --amity-blue: 215 70% 35%;
+    --amity-gold: 45 95% 55%;
+    --amity-blue-dark: 215 80% 25%;
+    --amity-gold-light: 45 90% 65%;
+    --amity-white: 0 0% 100%;
+    --amity-black: 215 20% 15%;
+
+    /* Modern gradients */
+    --amity-gradient: linear-gradient(135deg, hsl(215 70% 35%), hsl(45 95% 55%));
+    --hero-gradient: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(215 70% 35%) 100%);
+    --glass-gradient: linear-gradient(135deg, hsl(215 70% 35% / 0.1), hsl(45 95% 55% / 0.1));
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 219 56% 23%;
+    --sidebar-primary: 219 56% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 47 100% 51%;
+    --sidebar-accent-foreground: 219 56% 23%;
+    --sidebar-border: 220 20% 80%;
+    --sidebar-ring: 47 100% 51%;
+  }
+
+  .dark {
+    --background: 215 80% 15%; /* Dark Amity Blue */
+    --foreground: 0 0% 100%;
+
+    --card: 215 70% 20%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 215 70% 20%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 45 95% 55%; /* Amity Gold */
+    --primary-foreground: 215 80% 15%;
+
+    --secondary: 215 60% 30%; /* Darker Blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 45 90% 65%; /* Light Gold */
+    --accent-foreground: 215 80% 15%;
+
+    --muted: 215 60% 25%;
+    --muted-foreground: 210 20% 80%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 95% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 50% 30%;
+    --input: 215 50% 30%;
+    --ring: 45 95% 55%;
+
+    --sidebar-background: 215 80% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 95% 55%;
+    --sidebar-primary-foreground: 215 80% 15%;
+    --sidebar-accent: 45 90% 65%;
+    --sidebar-accent-foreground: 215 80% 15%;
+    --sidebar-border: 215 50% 30%;
+    --sidebar-ring: 45 95% 55%;
+  }
+}
+
+/* Modern UI Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-background/10 backdrop-blur-sm border border-border/20;
+  }
+  
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-md border border-border/30 shadow-lg;
+  }
+  
+  .glass-nav {
+    @apply bg-background/20 backdrop-blur-md border border-border/20;
+  }
+}
+
+/* Modern Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
