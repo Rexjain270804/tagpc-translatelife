@@ -47,43 +47,43 @@ const SpeakersSection = () => {
     },
     {
       name: "Prof. Sheila Rai",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Chief Guest",
       designation: "Council Member ICSSR, New Delhi. Professor (Retd.), Department of Political Science, University of Rajasthan",
       image: "/speakers/sheila_rai.png"
     },
     {
       name: "Prof. Panchanan Mohanty",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Council Member ICSSR, New Delhi. Professor (Retd.), Department of Political Science, University of Rajasthan",
       image: "/speakers/panchanan_mohanty.png"
     },
     {
       name: "Prof. Udai Narayan Singh",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Chair Professor & Head, ACLiS, Amity University Gurgaon. Former Chair Professor, Rabindra Bhavana, Visva-Bharati, Santiniketan",
       image: "https://i.ibb.co/qvtdr7V/Prof-Uday-narayan-singh.jpg"
     },
     {
       name: "Prof. Radha Chakravarty",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Former Professor of Comparative Literature and Translation Studies, Ambedkar University Delhi",
       image: "/speakers/radha_chakravarty.png"
     },
     {
       name: "Prof. Vridhagiri Ganeshan",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Emeritus Professor of German, Peachtree Corners, Georgia, United States",
       image: "/speakers/vridhagiri_ganeshan.png"
     },
     {
       name: "Prof. Chartier Fabien",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Teacher of English and French, Rennes University France",
       image: "/speakers/chartier_fabien.png"
     },
     {
       name: "Mr. Pinak Ranjan Chakravarty ",
-      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      title: "Chief Guest",
       designation: "Former Secretary, Ministry of External Affairs; Founding Director, DeepStrat.",
       image: "/speakers/Pinak Ranjan Sir.jpg"
     },
@@ -141,8 +141,9 @@ const SpeakersSection = () => {
   const patrons = speakers.filter(s => s.title === "Patron");
   const directors = speakers.filter(s => s.title === "Conference Director & Convenor");
   const coordinators = speakers.filter(s => s.title === "Coordinator");
-  const keynotes = speakers.filter(s => s.title === "Chief Guest/Guest of Honour/Keynote/Plenary Speaker");
+  const keynotes = speakers.filter(s => s.title === "Guest of Honour/Keynote/Plenary Speaker");
   const invited = speakers.filter(s => s.title === "Invited Speaker");
+  const chiefGuest = speakers.filter(s => s.title === "Chief Guest");
 
   const renderSpeakerCard = (speaker: any, index: number) => (
     <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm border-border/50">
@@ -204,10 +205,16 @@ const SpeakersSection = () => {
             {coordinators.map(renderSpeakerCard)}
           </div>
         </div>
-
+        {/* Chief Guest */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Chief Guest</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {chiefGuest.map(renderSpeakerCard)}
+          </div>
+        </div>
         {/* Keynote Speakers */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Chief Guest / Guest of Honour / Keynote / Plenary Speakers</h3>
+          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Guest of Honour / Keynote / Plenary Speakers</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {keynotes.map(renderSpeakerCard)}
           </div>

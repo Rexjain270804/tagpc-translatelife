@@ -32,28 +32,28 @@ const HeroSection = () => {
 
           {/* Main Title */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="text-xl sm:text-2xl font-bold text-secondary mb-2 tracking-wide uppercase">
+            <div className="text-xl sm:text-2xl font-bold text-primary mb-2 tracking-wide uppercase">
               ICSSR Sponsored
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight tracking-tight">
               International Conference on
-              <span className="block text-secondary font-extrabold italic">Translation Studies</span>
+              <span className="block text-primary font-extrabold">Translation Studies</span>
             </h1>
           </div>
 
           {/* Conference Details */}
           <div className="animate-fade-in-up flex flex-col items-center justify-center gap-6 mb-6" style={{ animationDelay: '0.4s' }}>
             {/* Theme - Full Line */}
-            <div className="glass px-8 py-4 rounded-2xl text-secondary border border-primary/20 w-auto inline-block max-w-4xl shadow-lg hover:shadow-primary/10 transition-shadow duration-300">
+            <div className="glass px-8 py-4 rounded-2xl text-primary border border-primary/20 w-auto inline-block max-w-4xl shadow-lg hover:shadow-primary/10 transition-shadow duration-300">
               <span className="font-semibold text-lg sm:text-xl block sm:inline mb-1 sm:mb-0">Theme:</span> <span className="font-bold text-xl sm:text-2xl ml-0 sm:ml-2">Translating Across Genres: Practices & Challenges (TAG-PC)</span>
             </div>
 
             {/* Dates and Location - Below Theme */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-base sm:text-lg font-medium w-full">
-              <div className="glass px-6 py-3 rounded-2xl text-secondary border border-secondary/20 flex items-center justify-center min-w-[200px]">
+              <div className="glass px-6 py-3 rounded-2xl text-primary border border-primary/20 flex items-center justify-center min-w-[200px]">
                 <span className="font-semibold mr-2">Dates:</span> <span className="font-bold">29 – 30 January 2026</span>
               </div>
-              <div className="glass px-6 py-3 rounded-2xl text-secondary border border-accent/20 flex items-center justify-center min-w-[200px]">
+              <div className="glass px-6 py-3 rounded-2xl text-primary border border-accent/20 flex items-center justify-center min-w-[200px]">
                 <span className="font-semibold mr-2">Location:</span> <span className="font-bold">Amity University Rajasthan, Jaipur</span>
               </div>
             </div>
@@ -64,9 +64,9 @@ const HeroSection = () => {
             <div className="flex flex-col items-center">
               <div className="text-center">
                 <span className="font-medium">Organized by: </span>
-                <span className="font-bold text-secondary">Amity School of Languages,</span>
+                <span className="font-bold text-primary">Amity School of Languages,</span>
               </div>
-              <div className="font-bold text-secondary text-center">
+              <div className="font-bold text-primary text-center">
                 Amity University Rajasthan
               </div>
             </div>

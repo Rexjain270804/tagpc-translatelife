@@ -14,7 +14,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary">
-            Contact <span className="text-secondary italic">Us</span>
+            Contact <span className="text-primary">Us</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ const ContactSection = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-secondary/20 shrink-0">
-                    <MapPin className="h-6 w-6 text-secondary" />
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-foreground mb-2">Address</h4>
