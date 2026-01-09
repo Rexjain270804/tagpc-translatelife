@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 import logoImage from '@/assets/conference-logo.png';
 // PDF should be placed in public/ folder
-const cfpPdfUrl = '/CFP TAG-PC.pdf';
+const cfpPdfUrl = '/CFP TAG-PC_final.pdf';
 
 const HeroSection = () => {
   const { data: content } = useWebsiteContent();

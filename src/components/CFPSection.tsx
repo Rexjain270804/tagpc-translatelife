@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useWebsiteContent } from '@/hooks/useWebsiteContent';
 // PDF should be placed in public/ folder, not imported as module
-const cfpPdfUrl = "/CFP%20for%20International%20Conference%202025%20ASL.pdf";
+const cfpPdfUrl = "/CFP TAG-PC_final.pdf";
 
 const CFPSection = () => {
   const { data: content } = useWebsiteContent();
