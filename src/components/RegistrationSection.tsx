@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Clock, CreditCard, Send, User, Mail, Building, FileText } from 'lucide-react';
+import { Clock, CreditCard, Send, User, Mail, Building, FileText, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -57,24 +57,17 @@ const RegistrationSection = () => {
     <section id="registration" className="py-16 md:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
       <div className="container mx-auto px-4">
         {/* Conference Overview & Topics */}
-        <div className="mb-8 md:mb-12 grid lg:grid-cols-2 gap-6 md:gap-8">
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-primary/20">
-            <h3 className="text-xl md:text-2xl font-bold text-primary mb-4">Conference Overview</h3>
-            <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base lg:text-lg leading-relaxed">
-              With globalization and digital media, the demand for specialized translation has grown exponentially. This conference addresses the need for tailored approaches to ensure accuracy, cultural relevance, and functional effectiveness across genres. It celebrates the diversity of translation across all genres and specializations, from literary and technical translation to multimedia localization and AI-driven solutions. Scholars, translators, linguists, and industry professionals will discuss the complexities of translating different genres—such as literary, technical, legal, medical, audiovisual, and digital texts.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-primary/20">
-            <h4 className="font-semibold text-primary mb-2 text-lg md:text-xl">Suggested Topics</h4>
-            <ul className="list-disc list-inside text-muted-foreground text-sm md:text-base space-y-1 md:space-y-2">
-              <li>Literary Translation: style, humor, cultural metaphors, retranslation, canon formation</li>
-              <li>Specialized Translation: legal, medical, technical, terminology, ethics</li>
-              <li>Audiovisual & Multimedia Translation: subtitling, dubbing, localization, accessibility, AI</li>
-              <li>Technology & Future Trends: AI, neural MT, CAT tools, automation</li>
-              <li>Pedagogy & Profession: training, industry vs. academia, freelance challenges</li>
-              <li>Cultural & Contextual Challenges: untranslatability, idioms, oral traditions, humor, politics</li>
-            </ul>
-          </div>
+        {/* Suggested Topics */}
+        <div className="mb-8 md:mb-12 bg-white rounded-2xl shadow-lg p-6 md:p-8 border border-primary/20">
+          <h4 className="font-semibold text-primary mb-2 text-lg md:text-xl">Suggested Topics</h4>
+          <ul className="list-disc list-inside text-muted-foreground text-sm md:text-base space-y-1 md:space-y-2">
+            <li>Literary Translation: style, humor, cultural metaphors, retranslation, canon formation</li>
+            <li>Specialized Translation: legal, medical, technical, terminology, ethics</li>
+            <li>Audiovisual & Multimedia Translation: subtitling, dubbing, localization, accessibility, AI</li>
+            <li>Technology & Future Trends: AI, neural MT, CAT tools, automation</li>
+            <li>Pedagogy & Profession: training, industry vs. academia, freelance challenges</li>
+            <li>Cultural & Contextual Challenges: untranslatability, idioms, oral traditions, humor, politics</li>
+          </ul>
         </div>
 
         {/* Submission Guidelines */}
@@ -88,6 +81,17 @@ const RegistrationSection = () => {
             <li>Full Paper Submission: <span className="font-semibold">18/01/2026</span></li>
             <li>Submission Email: <a href="mailto:internationalconferenceasl@gmail.com" className="text-primary underline">internationalconferenceasl@gmail.com</a></li>
           </ul>
+          <div className="mt-6 flex justify-center">
+            <Button
+              variant="default"
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={() => window.open('/CFP TAG-PC_final.pdf', '_blank')}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download Call for Papers
+            </Button>
+          </div>
         </div>
 
         {/* Registration Pricing Plans */}

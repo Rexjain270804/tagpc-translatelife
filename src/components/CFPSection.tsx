@@ -44,7 +44,7 @@ const CFPSection = () => {
                 <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2 text-primary">Abstract Submission Deadline</h3>
                 <p className="text-2xl font-bold text-foreground">
-                  {getContent('dates', 'abstract_deadline') || '10 Jan 2026'}
+                  {getContent('dates', 'abstract_deadline') || '15 Jan 2026'}
                 </p>
               </CardContent>
             </Card>
@@ -54,7 +54,7 @@ const CFPSection = () => {
                 <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2 text-primary">Notification Date</h3>
                 <p className="text-2xl font-bold text-foreground">
-                  {getContent('dates', 'notification_date') || '11 Jan 2026'}
+                  {getContent('dates', 'notification_date') || '16 Jan 2026'}
                 </p>
                 {/* Download button removed as per revert request */}
               </CardContent>

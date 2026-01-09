@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Conference Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TAG-PC 2026</h3>
+            <h3 className="text-xl font-bold mb-4">TAG-PC</h3>
             <p className="text-primary-foreground/80 mb-4">
               International Conference on Translating Across Genres: Practices & Challenges
             </p>

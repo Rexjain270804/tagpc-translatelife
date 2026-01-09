@@ -18,7 +18,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16 lg:h-18">
           <a href="#" className="text-2xl font-bold text-primary flex items-center gap-2">
-            <em className="italic">TAG-PC</em> <span className="text-primary">2026</span>
+            <em className="italic">TAG-PC</em> <span className="text-primary"></span>
           </a>
 
           {/* Desktop Navigation */}
