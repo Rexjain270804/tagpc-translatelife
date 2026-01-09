@@ -146,7 +146,7 @@ const SpeakersSection = () => {
   const chiefGuest = speakers.filter(s => s.title === "Chief Guest");
 
   const renderSpeakerCard = (speaker: any, index: number) => (
-    <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm border-border/50">
+    <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-card/80 backdrop-blur-sm border-border/50 h-full">
       <CardContent className="p-6 text-center">
         <div className="mb-6">
           <img
@@ -215,8 +215,12 @@ const SpeakersSection = () => {
         {/* Keynote Speakers */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center text-foreground mb-12">Guest of Honour / Keynote / Plenary Speakers</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {keynotes.map(renderSpeakerCard)}
+          <div className="flex flex-wrap justify-center gap-8">
+            {keynotes.map((speaker, index) => (
+              <div key={index} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)]">
+                {renderSpeakerCard(speaker, index)}
+              </div>
+            ))}
           </div>
         </div>
 
