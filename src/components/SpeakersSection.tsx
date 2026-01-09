@@ -82,6 +82,12 @@ const SpeakersSection = () => {
       image: "/speakers/chartier_fabien.png"
     },
     {
+      name: "Mr. Pinak Ranjan Chakravarty ",
+      title: "Chief Guest/Guest of Honour/Keynote/Plenary Speaker",
+      designation: "Former Secretary, Ministry of External Affairs; Founding Director, DeepStrat.",
+      image: "/speakers/Pinak Ranjan Sir.jpg"
+    },
+    {
       name: "Prof. Ari Gautier",
       title: "Invited Speaker",
       designation: "French Writer and Poet, Oslo",
