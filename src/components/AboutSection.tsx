@@ -34,7 +34,7 @@ const AboutSection = () => {
           </div>
 
           <div className="space-y-4 mt-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary mb-4 text-center">Objectives</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4 text-left">Objectives</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1 shrink-0">

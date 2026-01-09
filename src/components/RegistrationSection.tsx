@@ -54,7 +54,7 @@ const RegistrationSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
+    <section id="registration" className="py-16 md:py-20 bg-gradient-to-br from-primary/10 to-accent/10">
       <div className="container mx-auto px-4">
         {/* Conference Overview & Topics */}
         <div className="mb-8 md:mb-12 grid lg:grid-cols-2 gap-6 md:gap-8">

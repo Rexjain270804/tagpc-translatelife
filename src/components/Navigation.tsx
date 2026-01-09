@@ -58,6 +58,13 @@ const Navigation = () => {
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </button>
+            <button
+              onClick={() => scrollToSection('registration')}
+              className="text-foreground hover:text-primary transition-all duration-300 font-medium text-base lg:text-lg relative group"
+            >
+              Registration
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,6 +111,12 @@ const Navigation = () => {
                 className="block w-full text-left px-6 py-3 text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-xl mx-2 font-medium"
               >
                 Contact
+              </button>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="block w-full text-left px-6 py-3 text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 rounded-xl mx-2 font-medium"
+              >
+                Registration
               </button>
             </div>
           </div>
