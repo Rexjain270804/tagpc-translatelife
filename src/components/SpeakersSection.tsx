@@ -43,7 +43,7 @@ const SpeakersSection = () => {
       name: "Dr. Parul Mishra",
       title: "Coordinator",
       designation: "Professor, Amity School of Languages, Amity University Rajasthan",
-      image: "https://i.ibb.co/svzrHcwg/Prof-Parul-Mishra-Coordinator-of-the-Conference.jpg"
+      image: "/speakers/Prof Parul Mishra Coordinator of the Conference.jpeg"
     },
     {
       name: "Prof. Sheila Rai",
