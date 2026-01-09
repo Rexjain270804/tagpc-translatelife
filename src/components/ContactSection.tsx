@@ -23,73 +23,83 @@ const ContactSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Contact Information */}
+          {/* Contact Information and Map Container */}
           <div className="glass-card rounded-3xl p-8 lg:p-12 border border-primary/20 animate-fade-in-up">
             <h3 className="text-2xl lg:text-3xl font-bold text-primary mb-8 text-center">Get in Touch</h3>
-            
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-primary/20">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-foreground mb-2">Email</h4>
-                  <a 
-                    href={`mailto:${getContent('contact', 'email') || 'internationalconferenceasl@gmail.com'}`}
-                    className="text-base text-primary hover:text-primary/80 transition-colors underline"
-                  >
-                    {getContent('contact', 'email') || 'internationalconferenceasl@gmail.com'}
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-accent/20">
-                  <Phone className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-foreground mb-2">Phone</h4>
-                  <div className="space-y-1">
-                    <a 
-                      href="tel:+919772557726"
-                      className="block text-base text-accent hover:text-accent/80 transition-colors underline"
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Left Column: Contact Details */}
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-primary/20 shrink-0">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Email</h4>
+                    <a
+                      href={`mailto:${getContent('contact', 'email') || 'internationalconferenceasl@gmail.com'}`}
+                      className="text-base text-primary hover:text-primary/80 transition-colors underline break-all"
                     >
-                      +91 97725 57726
-                    </a>
-                    <a 
-                      href="tel:+919352759928"
-                      className="block text-base text-accent hover:text-accent/80 transition-colors underline"
-                    >
-                      +91 93527 59928
-                    </a>
-                    <a 
-                      href="tel:+919116997632"
-                      className="block text-base text-accent hover:text-accent/80 transition-colors underline"
-                    >
-                      +91 91169 97632
+                      {getContent('contact', 'email') || 'internationalconferenceasl@gmail.com'}
                     </a>
                   </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-4 md:col-span-2">
-                <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-secondary/20">
-                  <MapPin className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-foreground mb-2">Address</h4>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    {getContent('contact', 'address') || 'Amity School of Languages, Amity University Rajasthan, Jaipur, India'}
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="glass p-6 rounded-2xl border border-secondary/20 mt-8">
-              <h4 className="font-bold text-lg text-foreground mb-2 text-center">Office Hours</h4>
-              <p className="text-base text-muted-foreground text-center">
-                Monday - Friday: 9:00 AM - 5:00 PM IST
-              </p>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-accent/20 shrink-0">
+                    <Phone className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Phone</h4>
+                    <div className="space-y-1">
+                      <a
+                        href="tel:+919772557726"
+                        className="block text-base text-accent hover:text-accent/80 transition-colors underline"
+                      >
+                        +91 97725 57726
+                      </a>
+                      <a
+                        href="tel:+919352759928"
+                        className="block text-base text-accent hover:text-accent/80 transition-colors underline"
+                      >
+                        +91 93527 59928
+                      </a>
+                      <a
+                        href="tel:+919116997632"
+                        className="block text-base text-accent hover:text-accent/80 transition-colors underline"
+                      >
+                        +91 91169 97632
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-secondary/20 shrink-0">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-foreground mb-2">Address</h4>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {getContent('contact', 'address') || 'Amity School of Languages, Amity University Rajasthan, Jaipur, India'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Google Map */}
+              <div className="h-full min-h-[300px] w-full rounded-2xl overflow-hidden border border-secondary/20 shadow-lg">
+                <iframe
+                  src="https://maps.google.com/maps?q=Amity%20University%20Rajasthan%20Jaipur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '300px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Amity University Rajasthan Map"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
