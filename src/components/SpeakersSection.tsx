@@ -54,7 +54,7 @@ const SpeakersSection = () => {
     {
       name: "Prof. Panchanan Mohanty",
       title: "Guest of Honour/Keynote/Plenary Speaker",
-      designation: "Council Member ICSSR, New Delhi. Professor (Retd.), Department of Political Science, University of Rajasthan",
+      designation: "Council Member ICSSR, New Delhi. Professor (Retd.), Center of Applied Linguistics and Translation studies, Maulana Azad National Urdu University and Malaviya National Institute of Technology",
       image: "/speakers/panchanan_mohanty.png"
     },
     {
