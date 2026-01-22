@@ -82,12 +82,6 @@ const SpeakersSection = () => {
       image: "/speakers/chartier_fabien.png"
     },
     {
-      name: "Mr. Pinak Ranjan Chakravarty ",
-      title: "Chief Guest",
-      designation: "Former Secretary, Ministry of External Affairs; Founding Director, DeepStrat.",
-      image: "/speakers/Pinak Ranjan Sir.jpg"
-    },
-    {
       name: "Prof. Ari Gautier",
       title: "Invited Speaker",
       designation: "French Writer and Poet, Oslo",
@@ -208,7 +202,7 @@ const SpeakersSection = () => {
         {/* Chief Guest */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center text-foreground mb-12">Chief Guest</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-md mx-auto">
             {chiefGuest.map(renderSpeakerCard)}
           </div>
         </div>
