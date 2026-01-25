@@ -58,6 +58,12 @@ const SpeakersSection = () => {
       image: "/speakers/panchanan_mohanty.png"
     },
     {
+      name:"Prof Suresh Kumar Agarwal",
+      title: "Guest of Honour/Keynote/Plenary Speaker",
+      designation: "Vice Chancellor MDSU, Ajmer",
+      image: "/speakers/Prof Suresh Kumar Agarwa.JPG"
+    },
+    {
       name: "Prof. Udai Narayan Singh",
       title: "Guest of Honour/Keynote/Plenary Speaker",
       designation: "Chair Professor & Head, ACLiS, Amity University Gurgaon. Former Chair Professor, Rabindra Bhavana, Visva-Bharati, Santiniketan",
