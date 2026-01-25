@@ -1,4 +1,4 @@
-import heroImage from '@/assets/TAG-PC-AUR.jpg';
+import heroImage from '@/assets/TAG-PC-AUR.webp';
 
 const HeroSection = () => {
   return (
