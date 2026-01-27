@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ImportantDocuments from '@/components/ImportantDocuments';
+import ImageCarousel from '@/components/ImageCarousel';
 import CFPSection from '@/components/CFPSection';
 import ThemesSection from '@/components/ThemesSection';
 import SpeakersSection from '@/components/SpeakersSection';
@@ -16,6 +17,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ImportantDocuments />
+      <ImageCarousel />
       <CFPSection />
       <ThemesSection />
       <SpeakersSection />

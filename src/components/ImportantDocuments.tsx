@@ -4,6 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const documents = [
     {
+        title: "Conference Tracks",
+        filename: "ConferenceTracks.pdf",
+        path: "/ConferenceTracks.pdf"
+    },
+    {
         title: "Committees & Responsibilities",
         filename: "Committees & Responsibilities TAG-PC.pdf",
         path: "/Committees & Responsibilities TAG-PC.pdf"
