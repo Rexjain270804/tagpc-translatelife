@@ -53,85 +53,85 @@ const SpeakersSection = () => {
     },
     {
       name: "Prof. Panchanan Mohanty",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      title: "Guest of Honour",
       designation: "Council Member ICSSR, New Delhi. Professor (Retd.), Center of Applied Linguistics and Translation studies, Maulana Azad National Urdu University and Malaviya National Institute of Technology",
       image: "/speakers/panchanan_mohanty.png"
     },
     {
-      name:"Prof Suresh Kumar Agarwal",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      name: "Prof Suresh Kumar Agarwal",
+      title: "Keynote Speaker",
       designation: "Vice Chancellor MDSU, Ajmer",
       image: "/speakers/Prof Suresh Kumar Agarwa.JPG"
     },
     {
-      name: "Prof. Udai Narayan Singh",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      name: "Prof. Udaya Narayana Singh",
+      title: "Keynote Speaker",
       designation: "Chair Professor & Head, ACLiS, Amity University Gurgaon. Former Chair Professor, Rabindra Bhavana, Visva-Bharati, Santiniketan",
       image: "https://i.ibb.co/qvtdr7V/Prof-Uday-narayan-singh.jpg"
     },
     {
       name: "Prof. Radha Chakravarty",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      title: "Keynote Speaker",
       designation: "Former Professor of Comparative Literature and Translation Studies, Ambedkar University Delhi",
       image: "/speakers/radha_chakravarty.png"
     },
     {
       name: "Prof. Vridhagiri Ganeshan",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      title: "Keynote Speaker",
       designation: "Emeritus Professor of German, Peachtree Corners, Georgia, United States",
       image: "/speakers/vridhagiri_ganeshan.png"
     },
     {
       name: "Prof. Chartier Fabien",
-      title: "Guest of Honour/Keynote/Plenary Speaker",
+      title: "Keynote Speaker",
       designation: "Teacher of English and French, Rennes University France",
       image: "/speakers/chartier_fabien.png"
     },
     {
       name: "Prof. Ari Gautier",
-      title: "Invited Speaker",
+      title: "French Author",
       designation: "French Writer and Poet, Oslo",
       image: "https://i.ibb.co/gLLRCcJy/Prof-Ari-Gautier.webp"
     },
     {
       name: "Prof. Hemendra Chandalia",
-      title: "Invited Speaker",
+      title: "Speaker",
       designation: "Professor of English, Janardan Rai Nagar Rajasthan Vidyapeeth (University) Udaipur",
       image: "/speakers/hemendra_chandalia.png"
     },
     {
-      name: "Prof. Nibir K. Ghosh, D.Litt.",
-      title: "Invited Speaker",
+      name: "Prof. Nibir Ghosh",
+      title: "Speaker",
       designation: "UGC Emeritus Professor, Department of English Studies & Research, Agra College, Agra",
       image: "/speakers/nibir_ghosh.png"
     },
     {
-      name: "Prof. Sunita Rani",
-      title: "Invited Speaker",
+      name: "Prof. Sunita Rani Ghosh",
+      title: "Speaker",
       designation: "Department of Hindi, Agra College, Agra. Visiting Scholar University of Washington, Seattle, USA",
       image: "/speakers/sunita_rani.png"
     },
     {
       name: "Prof. Nilanjan Chakrabarti",
-      title: "Invited Speaker",
+      title: "Speaker",
       designation: "Professor of French, Centre for Modern European Languages, Literatures and Culture Studies, Visva-Bharati, Santiniketan",
       image: "/speakers/nilanjan_chakrabarti.png"
     },
     {
-      name: "Dr. Shrikrishna Jugnu",
-      title: "Invited Speaker",
+      name: "Dr Shri Krishna Jugnu",
+      title: "Speaker",
       designation: "Translator, Poet, Writer",
       image: "https://i.ibb.co/JjNGtVLn/Dr-Shri-Krishna-Jugnu.webp"
     },
     {
       name: "Prof. Yukteshwar Kumar",
-      title: "Invited Speaker",
+      title: "Speaker",
       designation: "Senior Academic of the University of Bath, Specialising in Chinese and China. Former Deputy Mayor of Bath",
       image: "https://i.ibb.co/DDjBPgsn/VS.jpg"
     },
     {
       name: "Ms. Roopam Singh",
-      title: "Invited Speaker",
+      title: "Speaker",
       designation: "Editor, Translator, Writer",
       image: "/speakers/roopam_singh.png"
     }
@@ -141,8 +141,9 @@ const SpeakersSection = () => {
   const patrons = speakers.filter(s => s.title === "Patron");
   const directors = speakers.filter(s => s.title === "Conference Director & Convenor");
   const coordinators = speakers.filter(s => s.title === "Coordinator");
-  const keynotes = speakers.filter(s => s.title === "Guest of Honour/Keynote/Plenary Speaker");
-  const invited = speakers.filter(s => s.title === "Invited Speaker");
+  const guestOfHonours = speakers.filter(s => s.title === "Guest of Honour");
+  const keynotes = speakers.filter(s => s.title === "Keynote Speaker");
+  const invited = speakers.filter(s => s.title === "Speaker" || s.title === "French Author");
   const chiefGuest = speakers.filter(s => s.title === "Chief Guest");
 
   const renderSpeakerCard = (speaker: any, index: number) => (
@@ -212,9 +213,19 @@ const SpeakersSection = () => {
             {chiefGuest.map(renderSpeakerCard)}
           </div>
         </div>
+
+        {/* Guest of Honour */}
+        {guestOfHonours.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-center text-foreground mb-12">Guest of Honour</h3>
+            <div className="max-w-md mx-auto">
+              {guestOfHonours.map(renderSpeakerCard)}
+            </div>
+          </div>
+        )}
         {/* Keynote Speakers */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Guest of Honour / Keynote / Plenary Speakers</h3>
+          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Keynote Speakers</h3>
           <div className="flex flex-wrap justify-center gap-8">
             {keynotes.map((speaker, index) => (
               <div key={index} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)]">
@@ -226,7 +237,7 @@ const SpeakersSection = () => {
 
         {/* Invited Speakers */}
         <div>
-          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Invited Speakers</h3>
+          <h3 className="text-3xl font-bold text-center text-foreground mb-12">Speakers</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {invited.map(renderSpeakerCard)}
           </div>
